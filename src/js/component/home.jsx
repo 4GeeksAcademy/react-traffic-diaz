@@ -1,31 +1,33 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from 'react';
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+const TrafficLight = () => {
+  const [colorIndex, setColorIndex] = useState();
+  const colors = ['red', 'yellow', 'green'];
 
-//create your first component
-const TrafficLight= ()=>{
-	const [color,setColor]= useState("")
-	return (
-		<div className="trafficLight">
-			<div className="base"></div>
-			<div className="semaForo">
-				<div className={"light red " + (color == "red"? "redOn":"")}
-					onClick={() => setColor("red")}>
-				</div>
-				<div className={"light yellow " + (color == "yellow"? "yellowOn":"")}
-					onClick={() => setColor("yellow")}>
-				</div>
-				<div className={"light green " +  (color == "green"? "greenOn":"") }
-					onClick={() => setColor("green")}>
-				</div>
-			</div>
-		</div>
-	)
+  const changeColor = () => {
+    setColorIndex((colorIndex + 1) % colors.length);
+  };
+
+  return (
+    <div className="trafficLight">
+      <div className="base"></div>
+      <div className="semaForo">
+        <div className={"light red " + (colors[colorIndex] === "red" ? "redOn" : "")}
+          onClick={() => setColorIndex(0)}>
+        </div>
+        <div className={"light yellow " + (colors[colorIndex] === "yellow" ? "yellowOn" : "")}
+          onClick={() => setColorIndex(1)}>
+        </div>
+        <div className={"light green " + (colors[colorIndex] === "green" ? "greenOn" : "")}
+          onClick={() => setColorIndex(2)}>
+        </div>
+      </div>
+      <button onClick={changeColor}>Cambiar Color</button>
+    </div>
+  );
 }
 
-export default TrafficLight
+export default TrafficLight;
 
 
 
