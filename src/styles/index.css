@@ -10,3 +10,66 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+body{
+    display: flex;
+    justify-content: center;
+}
+.trafficLight{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  
+
+}
+
+.base {
+    background: black;
+    width: 30px;
+    height: 150px;
+
+}
+
+.semaForo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: black;
+    width: 195px;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.light{
+    margin-top: 8px;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    background: white;
+}
+
+
+.red{
+    background: red;
+    
+}
+
+.green{
+    background: green;
+    
+}
+
+.yellow{
+    background: yellow;
+}
+
+.redOn{
+    box-shadow: 5px 3px 104px 56px rgba(194,68,68,0.97);
+}
+.yellowOn{
+    box-shadow: 5px 3px 104px 56px rgba(245,245,17,1);
+}
+
+.greenOn{
+    box-shadow: 5px 3px 104px 56px rgba(57,209,34,1);
+}
